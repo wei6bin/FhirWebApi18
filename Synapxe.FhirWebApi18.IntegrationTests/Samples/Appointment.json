@@ -1,0 +1,23 @@
+{
+  "resourceType": "Appointment",
+  "status": "proposed",
+  "start": "2120-01-01T12:00:00+08:00",
+  "end": "2120-01-01T12:30:00+08:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/{newguid}"
+      },
+      "status": "tentative"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "cardio"
+        }
+      ]
+    }
+  ]
+}

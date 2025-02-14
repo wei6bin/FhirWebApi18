@@ -1,0 +1,98 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Appointment-custom",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "normative"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+      "valueCode": "4.0.0"
+    }
+  ],
+  "url": "http://sypnapxe.sg/fhir/StructureDefinition/Appointment-custom",
+  "version": "4.0.1",
+  "name": "Appointment-custom",
+  "status": "active",
+  "date": "2019-11-01T09:29:23+11:00",
+  "publisher": "Synapxe Pte. Ltd.",
+  "fhirVersion": "4.3.0",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Appointment",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Appointment",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Appointment",
+        "path": "Appointment",
+        "definition": "The Custom appointment.",
+        "constraint": [
+          {
+            "key": "ihis-apt-1",
+            "severity": "error",
+            "human": "If present, start SHALL have a higher value than current date time",
+            "expression": "start.hasValue().not() or now() <= start"
+          }
+        ]
+      },
+      {
+        "id": "Appointment.identifier",
+        "path": "Appointment.identifier",
+        "max": "1"
+      },
+      {
+        "id": "Appointment.cancelationReason",
+        "path": "Appointment.cancelationReason",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://sypnapxe.sg/fhir/ValueSet/appointmentCancellationReason"
+        }
+      },
+      {
+        "id": "Appointment.serviceType",
+        "path": "Appointment.serviceType",
+        "max": "0"
+      },
+      {
+        "id": "Appointment.specialty",
+        "path": "Appointment.specialty",
+        "max": "1"
+      },
+      {
+        "id": "Appointment.specialty.coding",
+        "path": "Appointment.specialty.coding",
+        "max": "2"
+      },
+      {
+        "id": "Appointment.supportingInformation",
+        "path": "Appointment.supportingInformation",
+        "max": "0"
+      },
+      {
+        "id": "Appointment.participant.period",
+        "path": "Appointment.participant.period",
+        "max": "0"
+      }
+    ]
+  }
+}

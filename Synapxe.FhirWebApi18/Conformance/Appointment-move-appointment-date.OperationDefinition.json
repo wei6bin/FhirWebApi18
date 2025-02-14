@@ -1,0 +1,83 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "Appointment-move-appointment-date",
+  "meta": {
+    "profile": [ "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-patch" ]
+  },
+  "name": "MoveAppointmentDate",
+  "status": "active",
+  "kind": "operation",
+  "affectsState": true,
+  "code": "move-appointment-date",
+  "resource": [ "Appointment" ],
+  "description": "Updates the appointment to a future start date.",
+  "system": false,
+  "type": false,
+  "instance": true,
+  "parameter": [
+    {
+      "id": "Appointment-move-appointment-date-status",
+      "name": "status",
+      "use": "in",
+      "min": 0,
+      "max": "0",
+      "documentation": "The appointment status",
+      "type": "code",
+      "extension": [
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
+          "extension": [
+            {
+              "url": "path",
+              "valueString": "Appointment.status"
+            },
+            {
+              "url": "type",
+              "valueCode": "replace"
+            }
+          ]
+        },
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-default-value",
+          "valueCode": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "Appointment-move-appointment-date-days-in-future",
+      "name": "days-in-future",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "The the number of days from the current date to move in to.",
+      "type": "integer",
+      "extension": [
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
+          "extension": [
+            {
+              "url": "path",
+              "valueString": "Appointment.start"
+            },
+            {
+              "url": "type",
+              "valueCode": "replace"
+            }
+          ]
+        },
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-transform",
+          "valueString": "now() + ($this.toString() + ' day').toQuantity()"
+        }
+      ]
+    },
+    {
+      "name": "updated",
+      "use": "out",
+      "min": 1,
+      "max": "1",
+      "documentation": "The updated appointment.",
+      "type": "Appointment"
+    }
+  ]
+}

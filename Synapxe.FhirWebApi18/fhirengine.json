@@ -1,0 +1,43 @@
+{
+  "EnableHandlerAutoRegistration": true,
+  "PublicConformanceResources": true,
+  "UseFhirController": false,
+  "SystemPlugins": {
+    "Metadata": "Conformance",
+    "Merge": true,
+    "Validate": true,
+    "BatchAndTransaction": true,
+    "SearchConfiguration": {
+      "BlockFilterlessSearch": true
+    },
+    "OpenTelemetryPrometheusMetrics": {
+      "AspNetCoreInstrumentation": true,
+      "HttpClientInstrumentation": true,
+      "RuntimeInstrumentation": true
+    },
+    "OpenTelemetryTracing": {
+      "AspNetCoreInstrumentation": true,
+      "SqlClientInstrumentation": {
+        "SetDbStatementForText": true
+      }
+    },
+    "Authentication": "Synapxe.FhirWebApi18.Security.HeadersAuthenticationHandler",
+    "ResourceRepositoryCache": {
+      "GlobalExpiration": "01:00:00",
+      "AllowCacheDisable": true
+    }
+  },
+  "Handlers": {
+    "Repository": {
+      "FhirDataStore<@NoSql>": {
+        "UseSqlDocument": {
+          "EnableRetryOnFailure": true
+        },
+        "IncludeStandardSearchParams": true,
+        "ConnectionString": "data",
+        "AcceptedTypes": [ "OperationDefinition", "SearchParameter", "CapabilityStatement", "StructureDefinition", "CodeSystem", "ValueSet", "Appointment" ],
+        "AllowedInteractions": [ "Create", "Read", "SearchType", "Update", "Delete", "Batch", "Transaction" ]
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "Bundle",
+  "id": "searchParameters",
+  "meta": {
+    "lastUpdated": "2021-05-05T08:04:45.3420489+00:00"
+  },
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://www.ihis.com.sg/fhir/SearchParameter/Appointment-active-participant",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "Appointment-active-participant",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
+        "url": "http://www.ihis.com.sg/fhir/SearchParameter/Appointment-active-participant",
+        "version": "0.1.0",
+        "name": "Appointment-active-participant",
+        "status": "draft",
+        "experimental": false,
+        "date": "2021-01-01T09:29:23+11:00",
+        "publisher": "Synapxe Pte. Ltd.",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://hl7.org/fhir"
+              }
+            ]
+          },
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
+              }
+            ]
+          }
+        ],
+        "description": "Who has accepted invitation",
+        "code": "active-participant",
+        "base": [ "Appointment" ],
+        "type": "reference",
+        "expression": "Appointment.participant.where(status='accepted').actor",
+        "target": [
+          "Patient",
+          "Practitioner",
+          "PractitionerRole",
+          "RelatedPerson",
+          "Device",
+          "HealthcareService",
+          "Location"
+        ]
+      }
+    }
+  ]
+}

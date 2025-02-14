@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ProjectGuid>{840EBE5B-E66B-4DFD-A2DB-34630A549387}</ProjectGuid>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="Synapxe.FhirWebApi18.IntegrationTests" />
+    </ItemGroup>
+    
+    <ItemGroup>
+    
+        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer" Version="4.3.0-*" />
+        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer.Extensions.Migration" Version="4.3.0-*" />
+        <PackageReference Include="Ihis.FhirEngine.Extensions.OpenTelemetry" Version="4.3.0-*" />
+        <PackageReference Include="Serilog.Sinks.OpenTelemetry" Version="4.1.1" />
+        <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.Swashbuckle" Version="4.3.0-*" />
+        <PackageReference Include="Ihis.FhirEngine.WebApi.R4" Version="4.3.0-*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="Conformance/*.StructureDefinition.json" />
+    </ItemGroup>
+</Project>

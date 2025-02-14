@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+  
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.0.0" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects" Version="9.1.0" />
+    <PackageReference Include="Ihis.FhirEngine.Data.SqlServer.Extensions.Migration" Version="4.3.0-dev-25013.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Synapxe.FhirWebApi18\Synapxe.FhirWebApi18.csproj" />
+  </ItemGroup>
+
+</Project>

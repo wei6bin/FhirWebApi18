@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "id": "appointmentCancellationReason",
+  "url": "http://sypnapxe.sg/fhir/ValueSet/appointmentCancellationReason",
+  "version": "0.1.0",
+  "name": "Appointment Cancellation Reasons",
+  "title": "Care Programs",
+  "status": "active",
+  "date": "2023-08-01",
+  "publisher": "Synapxe Pte. Ltd.",
+  "description": "Appointment cancellation reasons",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "SG",
+          "display": "Singapore"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://sypnapxe.sg/fhir/ValueSet/appointmentCancellationReason",
+        "concept": [
+          {
+            "code": "lost-interest",
+            "display": "Lost interest"
+          },
+          {
+            "code": "unavailable",
+            "display": "Unavailable"
+          },
+          {
+            "code": "reschedule",
+            "display": "Reschedule"
+          }
+        ]
+      }
+    ]
+  }
+}

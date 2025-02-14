@@ -1,0 +1,52 @@
+@baseUrl=https://localhost:7418
+@apiKey=fhirnexus-test
+
+### Metadata Request:
+# @name metadata request
+
+GET {{baseUrl}}/metadata
+x-api-key: {{apiKey}}
+      
+### Health Check Request:
+# @name health check request
+
+GET {{baseUrl}}/health
+
+### Transaction Request:
+
+POST {{baseUrl}}
+Content-Type: application/fhir+json
+x-api-key: {{apiKey}}
+
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {
+              "resourceType": "Appointment",
+              "status": "proposed",
+              "start": "2122-01-01T12:00:00+08:00",
+              "end": "2122-01-01T12:30:00+08:00",
+              "participant": [
+                {
+                  "actor": {
+                    "reference": "Patient/testpatient"
+                  },
+                  "status": "tentative"
+                }
+              ]
+            },
+            "request": {
+                "method": "POST",
+                "url": "Appointment"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "Appointment?status=proposed"
+            }
+        }
+    ]
+}

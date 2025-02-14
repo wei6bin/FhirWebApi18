@@ -1,0 +1,204 @@
+{
+  "resourceType": "CapabilityStatement",
+  "version": "1.0.0",
+  "status": "draft",
+  "experimental": true,
+  "kind": "capability",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "CapabilityStatement",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "OperationDefinition",
+          "interaction": [
+            {
+              "code": "update"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "SearchParameter",
+          "interaction": [
+            {
+              "code": "update"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "StructureDefinition",
+          "interaction": [
+            {
+              "code": "update"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "ValueSet",
+          "interaction": [
+            {
+              "code": "update"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "CodeSystem",
+          "interaction": [
+            {
+              "code": "update"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned"
+        },
+        {
+          "type": "Appointment",
+          "profile": "StructureDefinition/Appointment-custom",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Retrieves an appointment resource by id."
+            },
+            {
+              "code": "vread",
+              "documentation": "Retrieves an appointment resource by id and version."
+            },
+            {
+              "code": "history-instance",
+              "documentation": "Searches the appointment resource instance version history."
+            },
+            {
+              "code": "history-type",
+              "documentation": "Searches the appointment resource version history."
+            },
+            {
+              "code": "create",
+              "documentation": "Creates an appointment resource."
+            },
+            {
+              "code": "update",
+              "documentation": "Updates an appointment resource."
+            },
+            {
+              "code": "patch",
+              "documentation": "Updates an appointment resource."
+            },
+            {
+              "code": "search-type",
+              "documentation": "Searches the appointment resource."
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "active-participant",
+              "definition": "http://sypnapxe.sg/fhir/SearchParameter/Appointment-active-participant",
+              "type": "reference",
+              "documentation": "Filters by active participant"
+            },
+            {
+              "name": "actor",
+              "type": "reference",
+              "documentation": "Any one of the individuals participating in the appointment"
+            },
+            {
+              "name": "date",
+              "type": "date",
+              "documentation": "Appointment date/time"
+            },
+            {
+              "name": "patient",
+              "type": "reference",
+              "documentation": "One of the individuals of the appointment is this patient"
+            }
+          ],
+          "versioning": "versioned",
+          "operation": [
+            {
+              "name": "cancel",
+              "definition": "http://sypnapxe.sg/fhir/OperationDefinition/Appointment-cancel"
+            },
+            {
+              "name": "move-appointment-date",
+              "definition": "http://sypnapxe.sg/fhir/OperationDefinition/Appointment-move-appointment-date"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "batch"
+        },
+        {
+          "code": "transaction"
+        }
+      ]
+    }
+  ]
+}

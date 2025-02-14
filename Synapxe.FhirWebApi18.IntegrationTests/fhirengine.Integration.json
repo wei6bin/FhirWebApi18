@@ -1,0 +1,42 @@
+{
+  "ShowExceptionDetails": true,
+  "SystemPlugins": {
+    "Swagger": {
+      "RegisterMiddleware": true,
+      "ExamplesJsonPath": "fhir-examples.json",
+      "ExcludePaths": [ "/metadata" ],
+      "ExcludeResources": [ "OperationDefinition", "StructureDefinition", "SearchParameter", "CodeSystem", "ValueSet" ],
+      "ExcludeConditionalUpdatePath": true,
+      "AuthenticationSchemes": {
+        "Test": {
+          "in": "Header",
+          "name": "x-api-key",
+          "type": "ApiKey",
+          "example": "CCDP"
+        }
+      },
+      "Headers": {
+        "X-Ihis-CorrelationId": {
+          "Description": "Correlation Id for the request",
+          "Required": false,
+          "Example": "abcd"
+        },
+        "Content-Type": {
+          "Description": "Content type for the request",
+          "Required": false,
+          "Example": "application/fhir+json"
+        }
+      },
+      "RenameTags": {
+        "Appointment": "Patient Appointments"
+      }
+    },
+    "HealthCheck": {
+      "Detailed": true
+    }
+  },
+  "Handlers": {
+    "Repository": {
+    }
+  }
+}

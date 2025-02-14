@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synapxe.FhirWebApi18.AppHost", "Synapxe.FhirWebApi18.AppHost\Synapxe.FhirWebApi18.AppHost.csproj", "{F9858F87-49EB-4A4A-A6B7-32C187456EE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synapxe.FhirWebApi18", "Synapxe.FhirWebApi18\Synapxe.FhirWebApi18.csproj", "{840EBE5B-E66B-4DFD-A2DB-34630A549387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synapxe.FhirWebApi18.IntegrationTests", "Synapxe.FhirWebApi18.IntegrationTests\Synapxe.FhirWebApi18.IntegrationTests.csproj", "{6C97248D-0FC8-4540-A144-CD23D9080216}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9858F87-49EB-4A4A-A6B7-32C187456EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9858F87-49EB-4A4A-A6B7-32C187456EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9858F87-49EB-4A4A-A6B7-32C187456EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9858F87-49EB-4A4A-A6B7-32C187456EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840EBE5B-E66B-4DFD-A2DB-34630A549387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840EBE5B-E66B-4DFD-A2DB-34630A549387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840EBE5B-E66B-4DFD-A2DB-34630A549387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840EBE5B-E66B-4DFD-A2DB-34630A549387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C97248D-0FC8-4540-A144-CD23D9080216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C97248D-0FC8-4540-A144-CD23D9080216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C97248D-0FC8-4540-A144-CD23D9080216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C97248D-0FC8-4540-A144-CD23D9080216}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
