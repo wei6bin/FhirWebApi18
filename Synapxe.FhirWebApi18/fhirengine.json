@@ -25,7 +25,10 @@
     "ResourceRepositoryCache": {
       "GlobalExpiration": "01:00:00",
       "AllowCacheDisable": true
-    }
+    },
+    "CustomResources": [
+      "Synapxe.FhirWebApi18.Data.Education"
+    ]
   },
   "Handlers": {
     "Repository": {

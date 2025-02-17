@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
@@ -19,6 +19,8 @@
         <PackageReference Include="Serilog.Sinks.OpenTelemetry" Version="4.1.1" />
         <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.Swashbuckle" Version="4.3.0-*" />
         <PackageReference Include="Ihis.FhirEngine.WebApi.R4" Version="4.3.0-*" />
+		<PackageReference Include="Ihis.FhirEngine.R4" Version="4.3.0-*" />
+		<PackageReference Include="Synapxe.Fhir.CodeGeneration" Version="1.0.0-*" />
     </ItemGroup>
 
     <ItemGroup>

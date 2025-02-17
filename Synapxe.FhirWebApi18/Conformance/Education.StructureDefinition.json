@@ -1,336 +1,14 @@
-@baseUrl=https://localhost:7418
-@apiKey=fhirnexus-test
-
-### Create Appointment Request:
-# @name createAppointmentRequest
-
-PUT {{baseUrl}}/CapabilityStatement/r5
-x-api-key: {{apiKey}}
-Content-Type: application/fhir+json
-
-{
-  "resourceType": "CapabilityStatement",
-  "id": "r5",
-  "meta": {
-    "tag": [
-      {
-        "system": "https://fhir.synapxe.sg/NamingSystem/systemcode",
-        "code": "r5"
-      }
-    ]
-  },
-  "url": "http://fhir.synapxe.sg/CapabilityStatement/r5",
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">nHIP capability statement</div>"
-  },
-  "name": "R5",
-  "status": "active",
-  "date": "2024-09-10",
-  "description": "This Capability Statement describes the requirements for the r5 programme of work",
-  "kind": "requirements",
-  "fhirVersion": "4.3.0",
-  "format": [
-    "application/fhir+json"
-  ],
-  "rest": [
-    {
-      "mode": "server",
-      "resource": [
-        {
-          "type": "CapabilityStatement",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "StructureDefinition",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "ValueSet",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "CodeSystem",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "OperationDefinition",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "SearchParameter",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true
-        },
-        {
-          "type": "Patient",
-          "interaction": [
-            {
-              "code": "create"
-            },
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "history-instance"
-            },
-            {
-              "code": "history-type"
-            },
-            {
-              "code": "vread"
-            },
-            {
-              "code": "search-type"
-            },
-            {
-              "code": "patch"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true,
-        },
-        {
-          "type": "Appointment",
-          "interaction": [
-            {
-              "code": "create"
-            },
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "history-instance"
-            },
-            {
-              "code": "history-type"
-            },
-            {
-              "code": "vread"
-            },
-            {
-              "code": "search-type"
-            },
-            {
-              "code": "patch"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true,
-        },
-        {
-          "type": "Organization",
-          "interaction": [
-            {
-              "code": "create"
-            },
-            {
-              "code": "read"
-            },
-            {
-              "code": "update"
-            },
-            {
-              "code": "delete"
-            },
-            {
-              "code": "history-instance"
-            },
-            {
-              "code": "history-type"
-            },
-            {
-              "code": "vread"
-            },
-            {
-              "code": "search-type"
-            },
-            {
-              "code": "patch"
-            }
-          ],
-          "versioning": "versioned",
-          "readHistory": true,
-       },
-       {
-         "type": "Education",
-         "profile": "http://hl7.org/fhir/StructureDefinition/r5-education-profile",
-         "interaction": [
-           {
-             "code": "read",
-             "documentation": "Retrieves an education resource by id."
-           },
-           {
-             "code": "vread",
-             "documentation": "Retrieves an education resource by id and version."
-           },
-           {
-             "code": "update",
-             "documentation": "Updates an education resource."
-           },
-           {
-             "code": "create",
-             "documentation": "Cretes an education resource."
-           },
-           {
-             "code": "delete",
-             "documentation": "Deletes an education resource."
-           },
-           {
-             "code": "search-type",
-             "documentation": "Searches education resources."
-           }
-         ],
-         "versioning": "versioned"
-        }
-      ],
-      "interaction": [
-        {
-          "code": "transaction"
-        },
-        {
-          "code": "search-system"
-        }
-      ],
-      "operation": [
-        {
-          "name": "reindex-get",
-          "definition": "https://localhost:7290/OperationDefinition/reindex-get"
-        },
-        {
-          "name": "reindex",
-          "definition": "https://localhost:7290/OperationDefinition/reindex"
-        }
-      ]
-    }
-  ]
-}
-
-### 
-PUT {{baseUrl}}/StructureDefinition/r5-education-profile
-x-api-key: {{apiKey}}
-Content-Type: application/fhir+json
-
 {
   "resourceType": "StructureDefinition",
-  "id": "r5-education-profile",
-  "url": "http://fhir.synapxe.sg/StructureDefinition/r5-education-profile",
+  "id": "Education",
+  "url": "http://hl7.org/fhir/StructureDefinition/Education",
   "version": "0.1",
-  "meta": {
-    "tag": [
-      {
-        "system": "https://fhir.synapxe.sg/NamingSystem/systemcode",
-        "code": "r5"
-      }
-    ]
-  },
-  "name": "EducationProfile",
+  "name": "Education",
   "status": "draft",
   "publisher": "Firely",
   "description": "Study or other form of education that a person has done.",
   "copyright": "Copyright (C) 2019 Firely",
-  "fhirVersion": "5.0.0",
+  "fhirVersion": "4.3.0",
   "kind": "resource",
   "abstract": false,
   "type": "Education",
@@ -373,6 +51,16 @@ Content-Type: application/fhir+json
             "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
           },
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
+                "valueMarkdown": "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
+              }
+            ],
             "key": "dom-6",
             "severity": "warning",
             "human": "A resource should have narrative for robust management",
@@ -411,6 +99,12 @@ Content-Type: application/fhir+json
         },
         "type": [
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+                "valueUrl": "id"
+              }
+            ],
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
@@ -420,6 +114,16 @@ Content-Type: application/fhir+json
       },
       {
         "id": "Education.meta",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.meta",
         "short": "Metadata about the resource",
         "definition": "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
@@ -454,6 +158,10 @@ Content-Type: application/fhir+json
           {
             "identity": "rim",
             "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
@@ -532,6 +240,20 @@ Content-Type: application/fhir+json
         "isModifier": false,
         "isSummary": false,
         "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
+              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "Language"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+              "valueBoolean": true
+            }
+          ],
           "strength": "preferred",
           "description": "IETF language tag",
           "valueSet": "http://hl7.org/fhir/ValueSet/languages"
@@ -545,6 +267,16 @@ Content-Type: application/fhir+json
       },
       {
         "id": "Education.text",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.text",
         "short": "Text summary of the resource, for human interpretation",
         "definition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
@@ -585,6 +317,14 @@ Content-Type: application/fhir+json
         "mapping": [
           {
             "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          },
+          {
+            "identity": "rim",
             "map": "Act.text?"
           }
         ]
@@ -614,7 +354,7 @@ Content-Type: application/fhir+json
         ],
         "constraint": [
           {
-            "key": "dom-r5",
+            "key": "dom-r4b",
             "severity": "warning",
             "human": "Containing new R4B resources within R4 resources may cause interoperability issues if instances are shared with R4 systems",
             "expression": "($this is Citation or $this is Evidence or $this is EvidenceReport or $this is EvidenceVariable or $this is MedicinalProductDefinition or $this is PackagedProductDefinition or $this is AdministrableProductDefinition or $this is Ingredient or $this is ClinicalUseDefinition or $this is RegulatedAuthorization or $this is SubstanceDefinition or $this is SubscriptionStatus or $this is SubscriptionTopic) implies (%resource is Citation or %resource is Evidence or %resource is EvidenceReport or %resource is EvidenceVariable or %resource is MedicinalProductDefinition or %resource is PackagedProductDefinition or %resource is AdministrableProductDefinition or %resource is Ingredient or %resource is ClinicalUseDefinition or %resource is RegulatedAuthorization or %resource is SubstanceDefinition or %resource is SubscriptionStatus or %resource is SubscriptionTopic)",
@@ -628,11 +368,25 @@ Content-Type: application/fhir+json
           {
             "identity": "rim",
             "map": "Entity. Role, or Act"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
       {
         "id": "Education.extension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.extension",
         "slicing": {
           "discriminator": [
@@ -689,11 +443,25 @@ Content-Type: application/fhir+json
           {
             "identity": "rim",
             "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
       {
         "id": "Education.modifierExtension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.modifierExtension",
         "slicing": {
           "discriminator": [
@@ -752,11 +520,25 @@ Content-Type: application/fhir+json
           {
             "identity": "rim",
             "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
       {
         "id": "Education.subject",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.subject",
         "short": "Who was educated?",
         "definition": "Person who has done this education.",
@@ -788,11 +570,15 @@ Content-Type: application/fhir+json
             "key": "ref-1",
             "severity": "error",
             "human": "SHALL have a contained resource if a local reference is provided",
-            "expression": "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids')) or (reference='#' and %rootResource!=%resource)",
+            "expression": "reference.exists() implies (reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids')) or (reference='#' and %rootResource!=%resource))",
             "source": "http://hl7.org/fhir/StructureDefinition/Reference"
           }
         ],
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "rim",
             "map": "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
@@ -801,6 +587,16 @@ Content-Type: application/fhir+json
       },
       {
         "id": "Education.institute",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.institute",
         "short": "Where did you do this study?",
         "definition": "Educational institute, like a university or training company",
@@ -809,7 +605,6 @@ Content-Type: application/fhir+json
         "max": "1",
         "base": {
           "path": "Education.institute",
-          "min": "0",
           "max": "1"
         },
         "type": [
@@ -835,11 +630,15 @@ Content-Type: application/fhir+json
             "key": "ref-1",
             "severity": "error",
             "human": "SHALL have a contained resource if a local reference is provided",
-            "expression": "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids')) or (reference='#' and %rootResource!=%resource)",
+            "expression": "reference.exists() implies (reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids')) or (reference='#' and %rootResource!=%resource))",
             "source": "http://hl7.org/fhir/StructureDefinition/Reference"
           }
         ],
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "rim",
             "map": "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
@@ -888,6 +687,16 @@ Content-Type: application/fhir+json
       },
       {
         "id": "Education.graduated[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Education.graduated[x]",
         "short": "Did subject graduate for the study?",
         "definition": "Did the subject graduate for the study? If possible enter the date of graduation.",
@@ -1003,24 +812,4 @@ Content-Type: application/fhir+json
       }
     ]
   }
-}
-
-###
-PUT {{baseUrl}}/SearchParameter/r5-education-institute
-x-api-key: {{apiKey}}
-Content-Type: application/fhir+json
-
-{
-	"resourceType": "SearchParameter",
-  "id": "r5-education-institute",
-	"url": "http://hl7.org/fhir/SearchParameter/Education-subject",
-	"name": "EducationSubject",
-	"status": "draft",
-	"description": "Search by subject",
-	"code": "subject",
-	"base": [
-		"Education"
-	],
-	"type": "reference",
-	"expression": "Education.subject"
 }
